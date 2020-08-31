@@ -6,9 +6,9 @@ Deploying to github is easy, if youre folder is already a github repo
 
 ~~~
 {}{shell}
-./deploy
+./deploy ./www
 ~~~
-from the root folder. 
+from the root folder, and the argument specifies the folder to build.
 
 If this doesnt work, try giving it executable permissions first:
 ~~~
