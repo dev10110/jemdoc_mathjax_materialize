@@ -11,3 +11,9 @@ result in your email.
 There are two levels of support:
 - Basic jemdoc, which I will attempt to support well, and
 - LaTeX equations in jemdoc, which I may attempt to support.
+
+{{<div class="divider"></div>}}
+
+For jemdoc\+MathJax\+MateriaizeCSS, contact [https://dev10110.github.io Devansh Agrawal].
+
+Feel free to raise issues in the [https://github.com/dev10110/jemdoc_mathjax_materialize  github project], or suggest changes through PRs.

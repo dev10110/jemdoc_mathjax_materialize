@@ -1,28 +1,30 @@
 # jemdoc: menu{MENU}{download.html}
 = jemdoc -- download
 
-Here is {{<a href="dist/jemdoc.py"
-onclick="javascript:urchinTracker('/downloads/jemdoc.py');">jemdoc.py</a>}}
-(+v0.7.3+). You can also download this [dist/jemdoc.css example css
-file] to get you started. You can easily modify the css to adjust colours, fonts
-and general layout elements to your taste. 
+The easiest way to use Jemdoc is to fork/copy/clone [https://github.com/dev10110/jemdoc_mathjax_materialize this repo], and mess around. 
 
-You may like to %sudo cp jemdoc.py /usr/bin/jemdoc%
-so that you can just type
-+jemdoc+; alternatively, you could add a line to your %~/.bashrc% or
-similar like %alias jemdoc='/somepath/jemdoc.py'%. Remember to +chmod \+x+ your
-file to make it executable.
+From the root directory run (assuming +python+ is available)
+~~~
+{}{shell}
+make
+~~~
+or
+~~~
+{}{shell}
+mkdir www/html
+cp jemdoc.css www/html
+cd www
+python ../jemdoc -c mysite.conf -o html/ *.jemdoc
+~~~
+which should compile the files in +www+ directory, and create html files in +www/html+, which you can open in any browser, and recreate this documentation. See running jemdoc for more info.
 
-jemdoc requires Python~2.3 or later. If you have a working installation of
+
+jemdoc requires Python~2.3 or later, but I use it with Python 3.8. If you have a working installation of
 Python, you should be ready to go. This includes all Macs, and almost any
 fairly modern unix or linux.
 
-[dist/ Old versions] can still be found. Mahesh Shastry provides a package with
-[http://www.personal.psu.edu/mcs312/miscellany.html\#portablejemdoc
-jemdoc compiled for Windows].
+I havent tested the +make+ files for any system apart from MacOS 10.15.4, but they should be good too, at least on UNIX systems.
 
 == Where to next?
 Read about [using.html how to use jemdoc], check out an [example.html example
 page], then refer to the [cheatsheet.html cheat sheet] once you're underway.
-You could also download sample jemdoc code, like the [index.jemdoc index page]
-for this website.

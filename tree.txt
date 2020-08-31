@@ -1,0 +1,19 @@
+.
+├── Makefile
+├── jemdoc
+├── jemdoc.css
+└── example
+   ├── mysite.conf                  # the config file
+   ├── MENU                         # the MENU file
+   ├── link.jemdoc                  # all the jemdoc files
+   ├── mathjax.jemdoc
+   └── underscore.jemdoc
+   ├── assets                       # assets should be stored here
+   │   └── code.jpeg
+   └── html                         # this folder will be generated
+       ├── assets                   # assets is copied over
+       │   └── code.jpeg
+       ├── jemdoc.css
+       ├── link.html
+       ├── mathjax.html
+       └── underscore.html

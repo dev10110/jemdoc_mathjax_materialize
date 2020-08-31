@@ -7,6 +7,8 @@ files is processed by calling [http://www.latex-project.org/ +latex+] and
 feature). Resulting PNG images are then placed on the web page. Equations are
 typeset using pure LaTeX.
 
+Jemdoc+Mathjax usese MathJax instead, so its a bit more reliable, and looks neater!
+
 ~~~
 jemdoc equation support relies on several pieces, any of which may break. No
 guarantees! Support may be limited.

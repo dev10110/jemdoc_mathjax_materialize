@@ -1,0 +1,133 @@
+# jemdoc: menu{MENU}{make.html}
+= jemdoc +make+ 
+
+Make sure Python is available, I use Python 3.8. 
+
+One additional package is optional: [https://github.com/bartdag/pylinkvalidator +pylinkvalidator+] which can be downloaded by +pip install pylinkvalidator+
+
+This package is used to validate all internal links, which can be very useful between builds.
+
+== Building
+The default +Makefile+ in this repo is all you should need. 
+
+Running
+~~~
+{}{shell}
+make
+~~~
+
+builds the jemdoc files in folder +www+ 
+
+You can override this, by specifying which folder you want to build:
+~~~
+{}{shell}
+make src=./example
+~~~
+Both commands will generate a +html+ sub-folder, where all the html files will be outputted. 
+
+The default build directory is specified in +Makefile+ at the top. 
+
+*CSS*
+
+A default css files, +jemdoc.css+ is in the root folder, and will be copied into the distribution. This should be good for most use cases.
+
+*Assets*
+
+Most webistes will need some assets, like pictures or pdf files. 
+Save this inside an +assets+ folder and this will be copied over to +html\/assets\/+. Note the +jemdoc+ files are not copied over to the +html+ folder. 
+You are allowed to have whatever folder structure you want within +assets+
+This generally makes the folders cleaner, and helps avoid broken links.
+
+*MENU*
+
+The menu file must be in the +src+ directory. 
+
+*+mysite.conf+*
+
+The configuration file is assumed to be called +mysite.conf+ and should also be in the +src+ directory. You can override this filename by 
+
+~~~
+{}{shell}
+make conf=mysite.conf
+~~~
+
+
+== Cleaning
+Sometimes you need to clean out a folder, since old files can end up in the +html+ folder from multiple calls to +make+. 
+
+Simply run 
+~~~
+{}{shell}
+make clean
+~~~
+or if you want to specify the target directory
+~~~
+{}{shell}
+make clean src=./example
+~~~
+
+
+== Serving
+
+Python can also be used to serve the files
+~~~
+{}{shell}
+make serve
+~~~
+and open the browser to +localhost:8080+ 
+You will need a +index.html+ file for this to work, and is generally recommended.
+
+The options you can specify
+~~~
+{}{shell}
+p - for port (default to 8080)
+src - for target folder (default to www)
+~~~
+~~~
+{}{shell}
+make serve src=./example p=5000
+~~~
+
+
+== Checking Links
+Link checking is performed by +pylinkvalidator+
+
+Once the folder is being served, run
+~~~
+{}{shell}
+make serve
+~~~
+and the port can be passed in
+~~~
+{}{shell}
+make serve p=5000
+~~~
+
+
+== Tree Structure
+
+For example, the tree structure for the +example+ directory is
+
+~~~
+{}{shell}
+.
+├── Makefile
+├── jemdoc
+├── jemdoc.css
+└── example
+   ├── MENU                         # the MENU file
+   ├── mysite.conf                  # the config file
+   ├── link.jemdoc                  # all the jemdoc files
+   ├── mathjax.jemdoc
+   ├── underscore.jemdoc
+   ├── assets                       # assets should be stored in a folder
+   │   └── code.jpeg
+   └── html                         # *this folder will be generated*
+       ├── assets                   # assets is copied over
+       │   └── code.jpeg
+       ├── jemdoc.css
+       ├── link.html
+       ├── mathjax.html
+       └── underscore.html
+~~~
+and the +example\/html/+ folder can be hosted statically.

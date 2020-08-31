@@ -1,0 +1,24 @@
+# jemdoc: menu{MENU}{deploy.html}
+= Deploy
+
+
+Deploying to github is easy, if youre folder is already a github repo
+
+~~~
+{}{shell}
+./deploy
+~~~
+from the root folder. 
+
+If this doesnt work, try giving it executable permissions first:
+~~~
+{}{shell}
+chmod +x deploy.sh
+~~~
+and then try again.
+
+*Settings*
+
+You just need to specify some of the settings. 
+
+See +deploy.sh+ for details.

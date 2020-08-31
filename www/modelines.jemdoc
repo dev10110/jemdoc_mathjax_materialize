@@ -9,7 +9,9 @@ separated with commas (and any amount of white space).
 
 Multiple modelines can be included if they are all at the beginning of the file,
 and start with the same string. The modeline can be omitted altogether.
-
+~~~
+Some of these have not been tested with Jemdoc\+MathJax\+Materialize. Let me know if they dont work, and you need them!
+~~~
 == Modeline options
 === General
 - +menu{MENUFILENAME}{CURRENTFILENAME}+\n

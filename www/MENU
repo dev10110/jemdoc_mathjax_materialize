@@ -6,6 +6,7 @@ jemdoc
 
 user's guide
     running jemdoc      [using.html]
+    make                [make.html]
     example page        [example.html]
     cheat sheet         [cheatsheet.html]
     extra syntax        [extra.html]
@@ -16,7 +17,7 @@ configuration
     modelines           [modelines.html]
 
 goodies
-    vim, make           [stuff.html]
+    vim                 [stuff.html]
     latex equations     [latex.html]
     tables              [tables.html]
 

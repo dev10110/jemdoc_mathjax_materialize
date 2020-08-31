@@ -2,8 +2,8 @@
 
 # define the default folder to build
 src=./www
+conf=mysite.conf
 p=8080
-
 ####
 
 
@@ -18,10 +18,10 @@ build :
 	
 	@cp jemdoc $(src)  # copy jemdoc
 	@cp jemdoc.css $(src)/html # copy jemdoc.css from root into output directory
-	@if [ -d $(src)/assets ]; then @cp -r $(src)/assets $(OUTPUT); echo "# Copying assets"; fi # copy assets over, if the directory exists
+	@if [ -d $(src)/assets ]; then cp -r $(src)/assets $(src)/html/assets; echo "# Copying assets"; fi # copy assets over, if the directory exists
 	
 	# Parsing jemdoc
-	@cd $(src) && python jemdoc -c mysite.conf -o html/ *.jemdoc
+	@cd $(src) && python jemdoc -c $(conf) -o html/ *.jemdoc
 	
 	@rm $(src)/jemdoc 
 	# DONE

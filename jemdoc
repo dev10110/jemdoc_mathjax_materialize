@@ -181,7 +181,7 @@ def standardconf():
   
   [menustart]
   <div class="container"> <!-- Starting main container -->
-  <div class="row section">
+  <div class="row section"> 
   <div class="col s12 l3" id="layout-menu"><div class="divider" style="margin-bottom:1rem; margin-top:2rem"></div><section>
   
   [menuend]
@@ -209,12 +209,13 @@ def standardconf():
   
   [menulastbit]
   </div>
-  </div> <!-- closing main container -->
+  </div>  <!-- closing row -->
   
   [nomenulastbit]
   </div>
   
   [bodyend]
+  </div> <!-- closing main container -->
   </body>
   </html>
   
@@ -1463,7 +1464,7 @@ def procfile(f):
         nl(f)
         continue
       elif imgblock:
-        out(f.outf, '</td></tr></table>\n')
+        #out(f.outf, '</td></tr></table>\n')
         imgblock = False
         nl(f)
         continue
