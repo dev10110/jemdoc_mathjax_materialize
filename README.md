@@ -12,15 +12,8 @@ Python 2 or Python 3
 
 (Many thanks to [Ganesh Ajjanagadde](http://www.mit.edu/~gajjanag/), who made most of the changes for Python 3 compatibility.)
 
-What's new in jemdoc+MathJax
-----------------------------
-- MathJax support
-- Underscore
-- Control of the behavior of links: open in the current web broswer tab or in a new tab
-- Works on both Python 2 and 3
-
-And in jemdoc+MathJax+Materialize
----------------------------------
+What's new in jemdoc+MathJax+Materialize
+-----------------------------------------
 - MaterializeCSS support (removes overall table, replaces it with responsive two column layout)
 - Easier (to me) Makefile
 - Deploy to GitHub Pages shell script
