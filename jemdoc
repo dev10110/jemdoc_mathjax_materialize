@@ -141,7 +141,7 @@ def standardconf():
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   
   [defaultcss]
-  <link rel="stylesheet" href="jemdoc.css" type="text/css" />
+  #<link rel="stylesheet" href="jemdoc.css" type="text/css" />
   
   [windowtitle]
   # used in header for window title.
@@ -180,13 +180,14 @@ def standardconf():
   } catch(err) {}</script>
   
   [menustart]
-  <table summary="Table for page layout." id="tlayout">
-  <tr valign="top">
-  <td id="layout-menu">
+  <div class="container"> <!-- Starting main container -->
+  <div class="row section">
+  <div class="col s12 l3" id="layout-menu"><div class="divider" style="margin-bottom:1rem; margin-top:2rem"></div><section>
   
   [menuend]
-  </td>
-  <td id="layout-content">
+  </section><div class="divider" style="margin-bottom:2rem; margin-top:1rem"></div>
+  </div>
+  <div class="col s12 l9 mainContentArea">
   
   [menucategory]
   <div class="menu-category">|</div>
@@ -207,9 +208,8 @@ def standardconf():
   <div id="layout-content">
   
   [menulastbit]
-  </td>
-  </tr>
-  </table>
+  </div>
+  </div> <!-- closing main container -->
   
   [nomenulastbit]
   </div>
@@ -254,7 +254,7 @@ def standardconf():
   </div>
   
   [lastupdated]
-  Page generated |, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+  Page generated |, by <a href="https://dev10110.github.io/jemdocMathJaxMaterialize.html" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/dev10110.github.io">Github</a>
 
   [sourcelink]
   (<a href="|">source</a>)
@@ -1090,10 +1090,10 @@ def dashlist(f, ordered=False):
 
   if ordered:
     char = '.'
-    ul = 'ol'
+    ul = 'ol class="browser-default"'
   else:
     char = '-'
-    ul = 'ul'
+    ul = 'ul class="browser-default"'
 
   while pc(f) == char:
     (s, newlevel) = np(f, True, False)
@@ -1521,11 +1521,12 @@ def procfile(f):
           if g[5].isdigit():
             g[5] += 'px'
 
-          out(f.outf, '<table class="imgtable"><tr><td>\n')
+          # out(f.outf, '<table class="imgtable"><tr><td>\n')
           if g[6]:
             out(f.outf, '<a href="%s">' % g[6])
           out(f.outf, '<img src="%s"' % g[2])
-          out(f.outf, ' alt="%s"' % g[3])
+          if not g[3]=="":
+            out(f.outf, ' alt="%s"' % g[3])
           if g[4]:
             out(f.outf, ' width="%s"' % g[4])
           if g[5]:
@@ -1533,7 +1534,7 @@ def procfile(f):
           out(f.outf, ' />')
           if g[6]:
             out(f.outf, '</a>')
-          out(f.outf, '&nbsp;</td>\n<td align="left">')
+          # out(f.outf, '&nbsp;</td>\n<td align="left">')
           imgblock = True
 
         else:
