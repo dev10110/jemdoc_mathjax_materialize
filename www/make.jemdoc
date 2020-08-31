@@ -131,3 +131,5 @@ For example, the tree structure for the +example+ directory is
        └── underscore.html
 ~~~
 and the +example\/html/+ folder can be hosted statically.
+
+I would recommend having an +index.jemdoc+ as this would be entrypoint for github pages and most other servers.
