@@ -1,7 +1,7 @@
 # jemdoc: menu{MENU}{download.html}
 = jemdoc -- download
 
-The easiest way to use Jemdoc is to fork/copy/clone [https://github.com/dev10110/jemdoc_mathjax_materialize this repo], and mess around. 
+The easiest way to use Jemdoc is to fork\/copy\/clone [https://github.com/dev10110/jemdoc_mathjax_materialize this repo], and mess around. 
 
 From the root directory run (assuming +python+ is available)
 ~~~
