@@ -21,11 +21,9 @@ jemdoc index
 ~~~
 
 == CSS
-You will need to provide a [http://www.w3.org/Style/CSS/ CSS] file on your
-server. By default it should be called +jemdoc.css+. Here is an example
-[dist/jemdoc.css jemdoc.css] file: download it and place it in the same
-directory as your html files. (Or customize it, or start from scratch!)
-
+You will need to provide a [http://www.w3.org/Style/CSS/ CSS] file.
+You should/could start with the one in the root of this repo, and then modify it.
+ 
 == Change the configuration
 To choose a different output file, use +-o+:
 

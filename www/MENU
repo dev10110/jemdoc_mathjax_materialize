@@ -17,9 +17,5 @@ configuration
     modelines           [modelines.html]
 
 goodies
-    vim                 [stuff.html]
     latex equations     [latex.html]
     tables              [tables.html]
-
-
-# vim: et

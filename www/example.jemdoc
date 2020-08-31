@@ -1,4 +1,4 @@
-# jemdoc: menu{MENU}{example.html}, addcss{example.css}
+# jemdoc: menu{MENU}{example.html}
 = jemdoc -- example page
 
 ~~~
@@ -55,7 +55,7 @@ If the first line of the file starts with +\# jemdoc+, special functions like
 <td class="leftcell">
 ~~~
 == Example
-Here are some *text* /features/. I could [http://cvxmod.net/ link somewhere] or
+Here are some *text* /features/. I could [http://example.com/ link somewhere] or
 insert a raw link to another page like [download.html].  I could use
 +monospace+, too.
 
@@ -67,7 +67,7 @@ insert a raw link to another page like [download.html].  I could use
 ~~~
 {}{jemdoc}
 == Example
-Here are some *text* /features/. I could [http://cvxmod.net/ link somewhere] or
+Here are some *text* /features/. I could [http://example.com/ link somewhere] or
 insert a raw link to another page like [download.html].  I could use
 +monospace+, too.
 

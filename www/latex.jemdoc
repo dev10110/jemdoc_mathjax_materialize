@@ -1,4 +1,4 @@
-# jemdoc: menu{MENU}{latex.html}, showsource
+# jemdoc: menu{MENU}{latex.html}
 = jemdoc -- latex equations
 
 jemdoc includes support for LaTeX equations. LaTeX source embedded in jemdoc
@@ -58,7 +58,7 @@ formatting details can be adjusted using CSS.
   5, & x > 0. \\
   \end{array}\right.
   \)
-  (You can view the [latex.jemdoc jemdoc source] for this page.)
+  (You can view the jemdoc source for this page on github)
 - A random inequality might look like $3x + 2y^{4k + 6} \geq z$.
 - This page takes about 0.7 seconds to process on an average machine, including
   making all the equations from scratch.

@@ -21,6 +21,8 @@ What's new in jemdoc+MathJax+Materialize
 
 (but you're free to change it out for the original ones)
 
+![Screenshot](/www/assets/cover.png)
+
 How to use jemdoc+MathJax+Materialize
 -------------------------------------
 The only major difference from the original jemdoc in usage is the mechanism to fetch the javascript engine for MathJax.  The recommended way of doing this is to specify the URL of the javascript engine inside a configuration file (`mysite.conf` in the following example) and to provide the file to the jemdoc executable as

@@ -1,4 +1,4 @@
-# jemdoc: menu{MENU}{tables.html}, showsource, addcss{table}
+# jemdoc: menu{MENU}{tables.html}
 = jemdoc -- tables
 
 jemdoc includes preliminary support for tables.

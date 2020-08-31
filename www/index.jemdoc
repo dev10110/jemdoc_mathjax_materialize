@@ -1,4 +1,4 @@
-# jemdoc: menu{MENU}{index.html}, showsource
+# jemdoc: menu{MENU}{index.html}
 = jemdoc \+ MathJax \+ MaterializeCSS -- light markup
 [http://stanford.edu/~jacobm/ Jacob Mattingley] ([jacobm@stanford.edu]) (original jemdoc author)
 
@@ -22,12 +22,7 @@ deliberately feature poor) and has more consistent syntax.
 {}{img_left}{assets/cover.png}{}{}{}{}
 ~~~
 
-~~~
-Version +0.7.3+ was released on 2012-11-27 with some small bug fixes.
-See the [revision.html release notes].
-~~~
-
-[https://github.com/jem/jemdoc Contribute to jemdoc on github.]
+[https://github.com/dev10110/jemdoc_mathjax_materialize Contribute to jemdoc\+MathJax\+Materialize on github.]
 
 == Goals
 - Simple, consistent syntax.
@@ -37,9 +32,7 @@ See the [revision.html release notes].
   single css file \+ your input file {{&rarr;}} html.
 - Based on [http://www.w3.org/Style/CSS/ CSS] so formatting specifics are
   independent of jemdoc.
-- Production of clean,
-  [http://validator.w3.org/check/referer
-  standards-compliant] [http://www.w3.org/TR/xhtml11/ XHTML 1.1].
+- Production of clean, standards-compliant [http://www.w3.org/TR/xhtml11/ XHTML 1.1].
 - Minimal bells and whistles, but simple fallback to raw html if required.
 
 == License
