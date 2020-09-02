@@ -4,7 +4,7 @@ jemdoc+MathJax+Materialize
 
 *jemdoc+MathJax* adds the MathJax support to jemdoc.  You can use the same jemdoc syntax (and therefore no need to make any changes in your jemdoc scripts if you are an original jemdoc user), but the equations will be beautifully rendered by MathJax.  See http://web.stanford.edu/~wsshin/jemdoc+mathjax.html for more information and examples. 
 
-*jemdoc+MathJax+Materialize* adds MaterializeCSS based formatting to the document, making it responsive on small screens, and providing a more modern-looking interface. 
+*jemdoc+MathJax+Materialize* adds MaterializeCSS based formatting to the document, making it responsive on small screens, and providing a more modern-looking interface. See https://dev10110.github.io/jemdoc_mathjax_materialize/ for documentation and details.
 
 System requirements
 -------------------
