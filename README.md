@@ -31,6 +31,10 @@ How to use jemdoc+MathJax+Materialize
 Clone this repository, ensure python is available on the shell, and simply run 
 
 	make
+	
+To deploy the website to Github Pages, check the settings in ```deploy.sh``` and then run 
+
+	./deploy.sh
 
 See the documentation at https://dev10110.github.io/jemdoc_mathjax_materialize/make.html for more info.
 
