@@ -28,9 +28,9 @@ What's new in jemdoc+MathJax+Materialize
 
 How to use jemdoc+MathJax+Materialize
 -------------------------------------
-With Python available to the shell,
+Clone this repository, ensure python is available on the shell, and simply run 
 
-	make src=./example/ 
+	make
 
 See the documentation at https://dev10110.github.io/jemdoc_mathjax_materialize/make.html for more info.
 
