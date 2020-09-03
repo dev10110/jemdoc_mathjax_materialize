@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jemdoc <tt>make</tt> </title>
+<!-- MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
+<!-- Materialize Css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<!-- Jemdoc CSS -->
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+</head>
+<body>
+<div class="container"> <!-- Starting main container -->
+<div class="row section">
+<div class="col s12 l3" id="layout-menu"><div class="divider" style="margin-bottom:1rem; margin-top:2rem"></div><section>
+<div class="menu-category">jemdoc</div>
+<div class="menu-item"><a href="index.html">home</a></div>
+<div class="menu-item"><a href="download.html">download</a></div>
+<div class="menu-item"><a href="revision.html">version/bug&nbsp;info</a></div>
+<div class="menu-item"><a href="contact.html">contact</a></div>
+<div class="menu-category">user's guide</div>
+<div class="menu-item"><a href="using.html">running&nbsp;jemdoc</a></div>
+<div class="menu-item"><a href="make.html" class="current">make</a></div>
+<div class="menu-item"><a href="example.html">example&nbsp;page</a></div>
+<div class="menu-item"><a href="cheatsheet.html">cheat&nbsp;sheet</a></div>
+<div class="menu-item"><a href="extra.html">extra&nbsp;syntax</a></div>
+<div class="menu-category">configuration</div>
+<div class="menu-item"><a href="htmlchanges.html">html&nbsp;changes</a></div>
+<div class="menu-item"><a href="menu.html">adding&nbsp;a&nbsp;menu</a></div>
+<div class="menu-item"><a href="modelines.html">modelines</a></div>
+<div class="menu-category">goodies</div>
+<div class="menu-item"><a href="latex.html">latex&nbsp;equations</a></div>
+<div class="menu-item"><a href="tables.html">tables</a></div>
+</section><div class="divider" style="margin-bottom:2rem; margin-top:1rem"></div>
+</div>
+<div class="col s12 l9 mainContentArea">
+<div id="toptitle">
+<h1>jemdoc <tt>make</tt> </h1>
+</div>
+<p>Make sure Python is available, I use Python 3.8. 
+</p>
+<p>One additional package is optional: <a href="https://github.com/bartdag/pylinkvalidator" target=&ldquo;blank&rdquo;><tt>pylinkvalidator</tt></a> which can be downloaded by <tt>pip install pylinkvalidator</tt>
+</p>
+<p>This package is used to validate all internal links, which can be very useful between builds.
+</p>
+<h2>Building</h2>
+<p>The default <tt>Makefile</tt> in this repo is all you should need. 
+</p>
+<p>Running
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+make
+</pre></div></div>
+<p>builds the jemdoc files in folder <tt>www</tt> 
+</p>
+<p>You can override this, by specifying which folder you want to build:
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+make src=./example
+</pre></div></div>
+<p>Both commands will generate a <tt>html</tt> sub-folder, where all the html files will be outputted. 
+</p>
+<p>The default build directory is specified in <tt>Makefile</tt> at the top. 
+</p>
+<p><b>CSS</b>
+</p>
+<p>A default css files, <tt>jemdoc.css</tt> is in the root folder, and will be copied into the distribution. This should be good for most use cases.
+</p>
+<p><b>Assets</b>
+</p>
+<p>Most webistes will need some assets, like pictures or pdf files. 
+Save this inside an <tt>assets</tt> folder and this will be copied over to <tt>html/assets/</tt>. Note the <tt>jemdoc</tt> files are not copied over to the <tt>html</tt> folder. 
+You are allowed to have whatever folder structure you want within <tt>assets</tt>
+This generally makes the folders cleaner, and helps avoid broken links.
+</p>
+<p><b>MENU</b>
+</p>
+<p>The menu file must be in the <tt>src</tt> directory. 
+</p>
+<p><b><tt>mysite.conf</tt></b>
+</p>
+<p>The configuration file is assumed to be called <tt>mysite.conf</tt> and should also be in the <tt>src</tt> directory. You can override this filename by 
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+make conf=mysite.conf
+</pre></div></div>
+<h2>Cleaning</h2>
+<p>Sometimes you need to clean out a folder, since old files can end up in the <tt>html</tt> folder from multiple calls to <tt>make</tt>. 
+</p>
+<p>Simply run 
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+make clean
+</pre></div></div>
+<p>or if you want to specify the target directory
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+make clean src=./example
+</pre></div></div>
+<h2>Serving</h2>
+<p>Python can also be used to serve the files
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+make serve
+</pre></div></div>
+<p>and open the browser to <tt>localhost:8080</tt> 
+You will need a <tt>index.html</tt> file for this to work, and is generally recommended.
+</p>
+<p>The options you can specify
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+p - for port (default to 8080)
+src - for target folder (default to www)
+</pre></div></div>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+make serve src=./example p=5000
+</pre></div></div>
+<h2>Checking Links</h2>
+<p>Link checking is performed by <tt>pylinkvalidator</tt>
+</p>
+<p>Once the folder is being served, run
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+make serve
+</pre></div></div>
+<p>and the port can be passed in
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+make serve p=5000
+</pre></div></div>
+<h2>Tree Structure</h2>
+<p>For example, the tree structure for the <tt>example</tt> directory is
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+.
+├── Makefile
+├── jemdoc
+├── jemdoc.css
+└── example
+   ├── MENU                         # the MENU file
+   ├── mysite.conf                  # the config file
+   ├── link.jemdoc                  # all the jemdoc files
+   ├── mathjax.jemdoc
+   ├── underscore.jemdoc
+   ├── assets                       # assets should be stored in a folder
+   │   └── code.jpeg
+   └── html                         # *this folder will be generated*
+       ├── assets                   # assets is copied over
+       │   └── code.jpeg
+       ├── jemdoc.css
+       ├── link.html
+       ├── mathjax.html
+       └── underscore.html
+</pre></div></div>
+<p>and the <tt>example/html/</tt> folder can be hosted statically.
+</p>
+<p>I would recommend having an <tt>index.jemdoc</tt> as this would be entrypoint for github pages and most other servers.</p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2020-09-04 02:22:27 +08, by <a href="https://dev10110.github.io/jemdoc_mathjax_materialize/" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/jemdoc_mathjax_materialize">Github</a>
+</div>
+</div>
+</div>
+</div>  <!-- closing row -->
+</div> <!-- closing main container -->
+</body>
+</html>

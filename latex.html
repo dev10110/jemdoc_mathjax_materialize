@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jemdoc &ndash; latex equations</title>
+<!-- MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
+<!-- Materialize Css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<!-- Jemdoc CSS -->
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+</head>
+<body>
+<div class="container"> <!-- Starting main container -->
+<div class="row section">
+<div class="col s12 l3" id="layout-menu"><div class="divider" style="margin-bottom:1rem; margin-top:2rem"></div><section>
+<div class="menu-category">jemdoc</div>
+<div class="menu-item"><a href="index.html">home</a></div>
+<div class="menu-item"><a href="download.html">download</a></div>
+<div class="menu-item"><a href="revision.html">version/bug&nbsp;info</a></div>
+<div class="menu-item"><a href="contact.html">contact</a></div>
+<div class="menu-category">user's guide</div>
+<div class="menu-item"><a href="using.html">running&nbsp;jemdoc</a></div>
+<div class="menu-item"><a href="make.html">make</a></div>
+<div class="menu-item"><a href="example.html">example&nbsp;page</a></div>
+<div class="menu-item"><a href="cheatsheet.html">cheat&nbsp;sheet</a></div>
+<div class="menu-item"><a href="extra.html">extra&nbsp;syntax</a></div>
+<div class="menu-category">configuration</div>
+<div class="menu-item"><a href="htmlchanges.html">html&nbsp;changes</a></div>
+<div class="menu-item"><a href="menu.html">adding&nbsp;a&nbsp;menu</a></div>
+<div class="menu-item"><a href="modelines.html">modelines</a></div>
+<div class="menu-category">goodies</div>
+<div class="menu-item"><a href="latex.html" class="current">latex&nbsp;equations</a></div>
+<div class="menu-item"><a href="tables.html">tables</a></div>
+</section><div class="divider" style="margin-bottom:2rem; margin-top:1rem"></div>
+</div>
+<div class="col s12 l9 mainContentArea">
+<div id="toptitle">
+<h1>jemdoc &ndash; latex equations</h1>
+</div>
+<p>jemdoc includes support for LaTeX equations. LaTeX source embedded in jemdoc
+files is processed by calling <a href="http://www.latex-project.org/" target=&ldquo;blank&rdquo;><tt>latex</tt></a> and
+<a href="http://www.nongnu.org/dvipng/" target=&ldquo;blank&rdquo;><tt>dvipng</tt></a> (which must both be available for this
+feature). Resulting PNG images are then placed on the web page. Equations are
+typeset using pure LaTeX.
+</p>
+<p>Jemdoc+Mathjax usese MathJax instead, so its a bit more reliable, and looks neater!
+</p>
+<div class="infoblock">
+<div class="blockcontent">
+<p>jemdoc equation support relies on several pieces, any of which may break. No
+guarantees! Support may be limited.
+</p>
+</div></div>
+<h2>Inline equations</h2>
+<p>The conjugate function \(f^\star(y) = \sup_{x \in X}(y^Tx - f(x))\) appears here
+inline, and is in the variable \(y\). Dollar signs (<tt>$</tt>) surround the LaTeX
+equation in the jemdoc source.
+</p>
+<div class="codeblock">
+<div class="blocktitle">Syntax</div>
+<div class="blockcontent"><pre>
+The sample function $f^\star(y) = \sup_{x \in X}(y^Tx - f(x))$
+appears here inline, and is in the variable $y$.
+</pre></div></div>
+<h2>Equations on separate lines</h2>
+<p>To render an equation on its own line, use backslash-escaped round brackets
+(<tt>\(</tt> and <tt>\)</tt>). For example, the identity
+</p>
+<p style="text-align:center">
+\[
+(I + XY)^{-1} = I - X(I + YX)^{-1}Y
+\]
+</p><p>is typeset on its own line. Yes, round brackets instead of square
+brackets&#8201;&mdash;&#8201;this is to avoid a conflict with ordinary square brackets that are
+escaped to avoid being a link.  Sorry.
+</p>
+<div class="codeblock">
+<div class="blocktitle">Syntax</div>
+<div class="blockcontent"><pre>
+The identity
+\(
+    (I \+ XY)^{-1} = I - X(I \+ YX)^{-1}Y
+\)
+is typeset on its own line.
+</pre></div></div>
+<p>Here, the line breaks (and other whitespace) are ignored. As always, the exact
+formatting details can be adjusted using CSS.
+</p>
+<h2>Notes</h2>
+<ul class="browser-default">
+<li><p>The baseline is carefully adjusted. The sequences m\(m\)m and y\(y\)y (<tt>m$m$m</tt>
+and <tt>y$y$y</tt>), for example, should be neatly aligned (modulo bad browsers).
+</p>
+</li>
+<li><p>Definition by cases will work as expected, for example, \(f(x)\), where
+</p>
+</li>
+</ul class="browser-default">
+<p style="text-align:center">
+\[
+  f(x) = \left\{
+  \begin{array}{ll}
+  3, &amp; x \leq 0 \\
+  5, &amp; x &gt; 0. \\
+  \end{array}\right.
+  \]
+</p><p>(You can view the jemdoc source for this page on github)
+</p>
+<ul class="browser-default">
+<li><p>A random inequality might look like \(3x + 2y^{4k + 6} \geq z\).
+</p>
+</li>
+<li><p>This page takes about 0.7 seconds to process on an average machine, including
+making all the equations from scratch.
+</p>
+</li>
+<li><p>There are several configuration options for equations. They are detailed on
+the <a href="modelines.html" target=&ldquo;blank&rdquo;>modelines</a> page.
+</p>
+</li>
+</ul class="browser-default">
+<div id="footer">
+<div id="footer-text">
+Page generated 2020-09-04 02:22:27 +08, by <a href="https://dev10110.github.io/jemdoc_mathjax_materialize/" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/jemdoc_mathjax_materialize">Github</a>
+</div>
+</div>
+</div>
+</div>  <!-- closing row -->
+</div> <!-- closing main container -->
+</body>
+</html>

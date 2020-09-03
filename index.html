@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jemdoc + MathJax + MaterializeCSS &ndash; light markup</title>
+<!-- MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
+<!-- Materialize Css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<!-- Jemdoc CSS -->
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+</head>
+<body>
+<div class="container"> <!-- Starting main container -->
+<div class="row section">
+<div class="col s12 l3" id="layout-menu"><div class="divider" style="margin-bottom:1rem; margin-top:2rem"></div><section>
+<div class="menu-category">jemdoc</div>
+<div class="menu-item"><a href="index.html" class="current">home</a></div>
+<div class="menu-item"><a href="download.html">download</a></div>
+<div class="menu-item"><a href="revision.html">version/bug&nbsp;info</a></div>
+<div class="menu-item"><a href="contact.html">contact</a></div>
+<div class="menu-category">user's guide</div>
+<div class="menu-item"><a href="using.html">running&nbsp;jemdoc</a></div>
+<div class="menu-item"><a href="make.html">make</a></div>
+<div class="menu-item"><a href="example.html">example&nbsp;page</a></div>
+<div class="menu-item"><a href="cheatsheet.html">cheat&nbsp;sheet</a></div>
+<div class="menu-item"><a href="extra.html">extra&nbsp;syntax</a></div>
+<div class="menu-category">configuration</div>
+<div class="menu-item"><a href="htmlchanges.html">html&nbsp;changes</a></div>
+<div class="menu-item"><a href="menu.html">adding&nbsp;a&nbsp;menu</a></div>
+<div class="menu-item"><a href="modelines.html">modelines</a></div>
+<div class="menu-category">goodies</div>
+<div class="menu-item"><a href="latex.html">latex&nbsp;equations</a></div>
+<div class="menu-item"><a href="tables.html">tables</a></div>
+</section><div class="divider" style="margin-bottom:2rem; margin-top:1rem"></div>
+</div>
+<div class="col s12 l9 mainContentArea">
+<div id="toptitle">
+<h1>jemdoc + MathJax + MaterializeCSS &ndash; light markup</h1>
+<div id="subtitle"><a href="http://stanford.edu/~jacobm/" target=&ldquo;blank&rdquo;>Jacob Mattingley</a> (<a href="mailto:jacobm@stanford.edu" target=&ldquo;blank&rdquo;>jacobm@stanford.edu</a>) (original jemdoc author)
+</div>
+</div>
+<p><a href="http://dev10110.github.io" target=&ldquo;blank&rdquo;>Devansh Agrawal</a> (<a href="mailto:devanshinspace@gmail.com" target=&ldquo;blank&rdquo;>devanshinspace@gmail.com</a>) (jemdoc<tt>MathJax</tt>Materialize)
+</p>
+<p>jemdoc is a light text-based markup language designed for creating 
+websites. It takes a text file written with <a href="example.html" target=&ldquo;blank&rdquo;>jemdoc markup</a>, an
+optional configuration file and an optional menu file, and makes static websites
+that look something like this one, <a href="http://dev10110.github.io" target=&ldquo;blank&rdquo;>that one</a> or
+<a href="http://www.stanford.edu/class/ee364a/" target=&ldquo;blank&rdquo;>another one</a>.
+</p>
+<p>jemdoc was inspired by <a href="http://www.methods.co.nz/asciidoc/" target=&ldquo;blank&rdquo;>AsciiDoc</a>, which is a
+text document format. AsciiDoc is great, and lots of the ideas from AsciiDoc are
+copied in jemdoc. The main differences are that jemdoc is simpler (you could say
+deliberately feature poor) and has more consistent syntax.
+</p>
+<p><a href="download.html" target=&ldquo;blank&rdquo;>Download jemdoc.</a>
+</p>
+<p><b>Screenshot</b>
+</p>
+<img src="assets/cover.png" /><p><a href="https://github.com/dev10110/jemdoc_mathjax_materialize" target=&ldquo;blank&rdquo;>Contribute to jemdoc+MathJax+Materialize on github.</a>
+</p>
+<h2>Goals</h2>
+<ul class="browser-default">
+<li><p>Simple, consistent syntax.
+</p>
+</li>
+<li><p>\(\mbox{\LaTeX}\) <a href="latex.html" target=&ldquo;blank&rdquo;>equation support</a>.
+</p>
+</li>
+<li><p><a href="tables.html" target=&ldquo;blank&rdquo;>Table support</a>.
+</p>
+</li>
+<li><p>Portability. The (single) jemdoc <a href="http://www.python.org/" target=&ldquo;blank&rdquo;>Python</a> file +
+single css file + your input file &rarr; html.
+</p>
+</li>
+<li><p>Based on <a href="http://www.w3.org/Style/CSS/" target=&ldquo;blank&rdquo;>CSS</a> so formatting specifics are
+independent of jemdoc.
+</p>
+</li>
+<li><p>Production of clean, standards-compliant <a href="http://www.w3.org/TR/xhtml11/" target=&ldquo;blank&rdquo;>XHTML 1.1</a>.
+</p>
+</li>
+<li><p>Minimal bells and whistles, but simple fallback to raw html if required.
+</p>
+</li>
+</ul class="browser-default">
+<h2>License</h2>
+<p>Copyright &copy; 2007&ndash;2012 Jacob Mattingley.
+</p>
+<p>jemdoc is free software; you can redistribute it and/or modify it under the
+terms of the <a href="http://www.gnu.org/licenses/gpl-3.0.html" target=&ldquo;blank&rdquo;>GNU General Public
+License</a> as published by the Free Software Foundation; either version 3 of the
+License, or (at your option) any later version.
+</p>
+<p>jemdoc is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the <a href="http://www.gnu.org/licenses/gpl-3.0.html" target=&ldquo;blank&rdquo;>GNU
+General Public License</a> for more details.
+</p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2020-09-04 02:22:27 +08, by <a href="https://dev10110.github.io/jemdoc_mathjax_materialize/" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/jemdoc_mathjax_materialize">Github</a>
+</div>
+</div>
+</div>
+</div>  <!-- closing row -->
+</div> <!-- closing main container -->
+</body>
+</html>

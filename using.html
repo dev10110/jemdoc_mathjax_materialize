@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jemdoc &ndash; running jemdoc</title>
+<!-- MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
+<!-- Materialize Css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<!-- Jemdoc CSS -->
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+</head>
+<body>
+<div class="container"> <!-- Starting main container -->
+<div class="row section">
+<div class="col s12 l3" id="layout-menu"><div class="divider" style="margin-bottom:1rem; margin-top:2rem"></div><section>
+<div class="menu-category">jemdoc</div>
+<div class="menu-item"><a href="index.html">home</a></div>
+<div class="menu-item"><a href="download.html">download</a></div>
+<div class="menu-item"><a href="revision.html">version/bug&nbsp;info</a></div>
+<div class="menu-item"><a href="contact.html">contact</a></div>
+<div class="menu-category">user's guide</div>
+<div class="menu-item"><a href="using.html" class="current">running&nbsp;jemdoc</a></div>
+<div class="menu-item"><a href="make.html">make</a></div>
+<div class="menu-item"><a href="example.html">example&nbsp;page</a></div>
+<div class="menu-item"><a href="cheatsheet.html">cheat&nbsp;sheet</a></div>
+<div class="menu-item"><a href="extra.html">extra&nbsp;syntax</a></div>
+<div class="menu-category">configuration</div>
+<div class="menu-item"><a href="htmlchanges.html">html&nbsp;changes</a></div>
+<div class="menu-item"><a href="menu.html">adding&nbsp;a&nbsp;menu</a></div>
+<div class="menu-item"><a href="modelines.html">modelines</a></div>
+<div class="menu-category">goodies</div>
+<div class="menu-item"><a href="latex.html">latex&nbsp;equations</a></div>
+<div class="menu-item"><a href="tables.html">tables</a></div>
+</section><div class="divider" style="margin-bottom:2rem; margin-top:1rem"></div>
+</div>
+<div class="col s12 l9 mainContentArea">
+<div id="toptitle">
+<h1>jemdoc &ndash; running jemdoc</h1>
+</div>
+<p>Make sure
+<a href="http://www.python.org/" target=&ldquo;blank&rdquo;>Python</a> is installed, put jemdoc in your path somewhere,
+type in your file, and run
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+jemdoc index.jemdoc
+</pre></div></div>
+<p>This will use a default configuration for the html elements, and create an
+<tt>index.html</tt>.
+</p>
+<p>Even simpler, you can omit the extension, and jemdoc will still
+process the <tt>index.jemdoc</tt> file, as in
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+jemdoc index
+</pre></div></div>
+<h2>CSS</h2>
+<p>You will need to provide a <a href="http://www.w3.org/Style/CSS/" target=&ldquo;blank&rdquo;>CSS</a> file.
+You should/could start with the one in the root of this repo, and then modify it.
+</p>
+<h2>Change the configuration</h2>
+<p>To choose a different output file, use <tt>-o</tt>:
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+jemdoc -o html/index.html index
+</pre></div></div>
+<p>You can specify a different output directory with <tt>-o</tt>:
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+jemdoc -o html/ index
+</pre></div></div>
+<p>This will instead output to <tt>html/index.html</tt>.
+</p>
+<p>To change the html configuration (<a href="htmlchanges.html" target=&ldquo;blank&rdquo;>details here</a>), use <tt>-c</tt>:
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+jemdoc -c mysite.conf index
+</pre></div></div>
+<p>Command line options may be combined. For example, the following command will
+use <tt>mysite.conf</tt>, reading syntax from <tt>index.jemdoc</tt> and outputting to
+<tt>html/index.html</tt>:
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+jemdoc -c mysite.conf -o html/ index
+</pre></div></div>
+<h2>Other command line options</h2>
+<p>To check which version of jemdoc you are using, run the command
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+jemdoc --version
+</pre></div></div>
+<p>To get simple command-line help, you can run <tt>jemdoc</tt> without arguments, or
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+jemdoc --help
+</pre></div></div>
+<p>To show the html configuration (<a href="htmlchanges.html" target=&ldquo;blank&rdquo;>details here</a>), run
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+jemdoc --show-config
+</pre></div></div>
+<div id="footer">
+<div id="footer-text">
+Page generated 2020-09-04 02:22:27 +08, by <a href="https://dev10110.github.io/jemdoc_mathjax_materialize/" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/jemdoc_mathjax_materialize">Github</a>
+</div>
+</div>
+</div>
+</div>  <!-- closing row -->
+</div> <!-- closing main container -->
+</body>
+</html>
